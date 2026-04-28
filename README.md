@@ -1,1 +1,1 @@
-# 1-war_original
+Este repositorio contiene el projecto 1-war que es el original copiado de la app de consorcio donde se cae por SSO
