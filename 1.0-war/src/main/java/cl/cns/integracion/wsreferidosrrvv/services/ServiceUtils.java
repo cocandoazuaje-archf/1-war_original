@@ -10,9 +10,9 @@ import jakarta.persistence.criteria.Root;
 import jakarta.ws.rs.core.SecurityContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.keycloak.KeycloakPrincipal;
-import org.keycloak.KeycloakSecurityContext;
-
+// import org.keycloak.KeycloakPrincipal;
+// import org.keycloak.KeycloakSecurityContext;
+// 
 public class ServiceUtils {
 
     private static final Logger LOGGER = LogManager.getLogger(ServiceUtils.class);
@@ -41,19 +41,19 @@ public class ServiceUtils {
 
     public static String geUsername(SecurityContext sc) {
         String userName = null;
-        try {
-            // se usa el id como usuario
-            userName = sc.getUserPrincipal().getName();
-            // si esta loguado con un token de keycloack se usa el login name
-            if (sc.getUserPrincipal() instanceof KeycloakPrincipal) {
-                KeycloakPrincipal<KeycloakSecurityContext> kp = (KeycloakPrincipal<KeycloakSecurityContext>) sc
-                        .getUserPrincipal();
-                userName = kp.getKeycloakSecurityContext().getToken().getPreferredUsername();
-            }
-        } catch (Exception e) {
-            userName = "ANONIMO";
-            LOGGER.error("No se pudo obtener el usuario loguado desde el token.", e);
-        }
+        // try {
+        //     // se usa el id como usuario
+        //     userName = sc.getUserPrincipal().getName();
+        //     // si esta loguado con un token de keycloack se usa el login name
+        //     if (sc.getUserPrincipal() instanceof KeycloakPrincipal) {
+        //         KeycloakPrincipal<KeycloakSecurityContext> kp = (KeycloakPrincipal<KeycloakSecurityContext>) sc
+        //                 .getUserPrincipal();
+        //         userName = kp.getKeycloakSecurityContext().getToken().getPreferredUsername();
+        //     }
+        // } catch (Exception e) {
+        //     userName = "ANONIMO";
+        //     LOGGER.error("No se pudo obtener el usuario loguado desde el token.", e);
+        // }
         return userName;
     }
 }

@@ -9,13 +9,13 @@
     <artifactId>referidosrrvv</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-
+<!-- 
     <repositories>
         <repository>
             <id>keycloak</id>
             <url>https://maven.repository.redhat.com/ga/</url>
         </repository>
-    </repositories>
+    </repositories> -->
 
     <!-- Gestión de versiones -->
     <dependencyManagement>
@@ -113,11 +113,11 @@
         </dependency>
 
         <!-- Keycloak -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-core</artifactId>
             <version>26.0.5</version>
-        </dependency>
+        </dependency> -->
 
         <!-- Commons IO -->
         <dependency>
